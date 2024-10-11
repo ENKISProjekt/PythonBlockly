@@ -184,7 +184,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode('print("Hello, World!")')
+    editor.setCode('')
 
 
     Sk.configure({
@@ -263,7 +263,7 @@
     const container = document.querySelector('.js-container');
     runCode();
     var a = $("#output").text();
-    if(a==""){
+    if(a=="Hello, World!"){
         new Confettiful(container);
         showCorrectMessage();
     }
