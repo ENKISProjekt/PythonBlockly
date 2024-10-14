@@ -427,14 +427,60 @@
   };
   
   document.getElementById('submit').addEventListener('click', function() {
+    let check = true;
     const container = document.querySelector('.js-container');
-    runCode();
+    const choice1 = "343";
+
+    checkCode("");
     var a = $("#output").text();
-    if(a=="I see trees of greenRed roses, tooI see them bloomFor me and youFor me and youFor me and youFor me and you"){
+
+    if(a!=choice1){
+        check=false;
+    }
+
+    if(check){
         new Confettiful(container);
         showCorrectMessage();
     }
+
   });
+
+  
+  function checkCode(firstInput) {
+    const outputElement = document.getElementById("output");
+    const codeLines = document.querySelectorAll('.CodeMirror-line');
+    // Initialize an empty string to hold the combined text
+    let combinedText = "";
+
+    // Iterate through each 'CodeMirror-line' element and append its inner text to the combinedText
+    codeLines.forEach(line => {
+        if(line.innerText!='\u200B'){
+            combinedText += line.innerText + '\n';
+        }
+    });
+
+    const code = combinedText+firstInput;
+    console.log(code);
+    outputElement.innerText = "";
+    // console.log(code);
+    Sk.configure({
+        output: function(text) {
+            outputElement.innerText += text;
+        },
+        read: function(x) {
+            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+                throw "File not found: '" + x + "'";
+            }
+            return Sk.builtinFiles["files"][x];
+        }
+    });
+
+    Sk.misceval.asyncToPromise(function() {
+        return Sk.importMainWithBody("<stdin>", false, code, true);
+    }).catch(function(err) {
+        outputElement.innerText += err.toString();
+    });
+    }
 
   function showCorrectMessage() {
     const messageEl = document.getElementById('correctMessage');
