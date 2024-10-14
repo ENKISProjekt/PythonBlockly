@@ -448,6 +448,43 @@
 
   });
 
+  function checkCode(firstInput) {
+            const outputElement = document.getElementById("output");
+            const codeLines = document.querySelectorAll('.CodeMirror-line');
+            // Initialize an empty string to hold the combined text
+            let combinedText = "";
+    
+            // Iterate through each 'CodeMirror-line' element and append its inner text to the combinedText
+            codeLines.forEach(line => {
+                if(line.innerText!='\u200B'){
+                    combinedText += line.innerText + '\n';
+                }
+            });
+            combinedText+=firstInput;
+    
+            const code = combinedText;
+            console.log(code);
+            outputElement.innerText = "";
+            // console.log(code);
+            Sk.configure({
+                output: function(text) {
+                    outputElement.innerText += text;
+                },
+                read: function(x) {
+                    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+                        throw "File not found: '" + x + "'";
+                    }
+                    return Sk.builtinFiles["files"][x];
+                }
+            });
+    
+            Sk.misceval.asyncToPromise(function() {
+                return Sk.importMainWithBody("<stdin>", false, code, true);
+            }).catch(function(err) {
+                outputElement.innerText += err.toString();
+            });
+        }
+
   function showCorrectMessage() {
     const messageEl = document.getElementById('correctMessage');
     messageEl.style.display = 'block';
