@@ -427,13 +427,25 @@
   };
   
   document.getElementById('submit').addEventListener('click', function() {
+    let check = true;
     const container = document.querySelector('.js-container');
-    runCode();
+    const choice1 = "45155";
+    console.log("hihi");
+    checkCode("");
     var a = $("#output").text();
-    if(a=="I see trees of greenRed roses, tooI see them bloomFor me and youFor me and youFor me and youFor me and you"){
+
+    if(a!=choice1){
+        check=false;
+
+    }
+
+    console.log(a);
+    console.log(choice1);
+    if(check){
         new Confettiful(container);
         showCorrectMessage();
     }
+
   });
 
   function showCorrectMessage() {
