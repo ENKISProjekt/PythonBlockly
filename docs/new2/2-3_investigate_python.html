@@ -84,7 +84,7 @@
     </div>
     
 </div>
-<div id="correctMessage" class="correct-message">Correct!</div>
+<div id="correctMessage" class="correct-message">Korrekt. Glückwunsch!</div>
 </body>
 
 
@@ -184,7 +184,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode('print("O"+"O"+"O")\nprint("O"*3)\nprint("OO"*1.5)')
+    editor.setCode('print("X"+"X"+"X")\nprint("X"*3)\nprint("XX"*1.5)')
 
 
     Sk.configure({
@@ -263,7 +263,7 @@
     const container = document.querySelector('.js-container');
     runCode();
     var a = $("#output").text();
-    if(a=="OOOOOOOOO"){
+    if(a=="XXXXXXXXX"){
         new Confettiful(container);
         showCorrectMessage();
     }

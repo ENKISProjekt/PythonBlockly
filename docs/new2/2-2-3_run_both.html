@@ -91,7 +91,7 @@
 	</div>
 	
 </div>
-<div id="correctMessage" class="correct-message">Correct!</div>
+<div id="correctMessage" class="correct-message">Korrekt. Glückwunsch!</div>
 </body>
 
 
@@ -276,7 +276,7 @@
 	document.getElementById('submit').addEventListener('click', function() {
 		let check = true;
 		const container = document.querySelector('.js-container');
-		const choice1 = "53646432";
+		const choice1 = "Geben Sie eine Zahl ein:Geben Sie eine Zahl ein:53646432";
 
 		checkCode("");
 		var a = $("#output").text();
@@ -346,7 +346,7 @@
 <!-- Remark: Only Show Blocks that are Relevant -->
 <script>
 const itemsToRemove = ['Output','Values','Turtles', 'Dictionaries', 'Lists','Functions','Iteration','Calculation','Input','Decisions','Variables','Conversion'];  // List of items
-const itemsToRetain = ['Output','Values','Variables','Calculation']
+const itemsToRetain = ['Output','Values','Variables','Calculation','Input',"Conversion"]
 
 document.querySelectorAll('span.blocklyTreeLabel').forEach(function(span) {
 	const content = span.innerHTML.trim();
