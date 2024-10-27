@@ -519,4 +519,17 @@
     }, 4000); // Total duration to allow fade out to complete
   }
 </script>
+
+<script>
+    const itemsToRemove = ['Output','Values','Turtles', 'Dictionaries', 'Lists','Functions','Iteration','Calculation','Input','Decisions','Variables','Conversion'];  // List of items
+    const itemsToRetain = ['Output','Values','Variables','Calculation','Decisions']
+    
+    document.querySelectorAll('span.blocklyTreeLabel').forEach(function(span) {
+        const content = span.innerHTML.trim();
+        if (!itemsToRetain.includes(content)&&itemsToRemove.includes(content)) {
+            span.parentElement.remove();  
+        }
+    });
+    
+    </script>
 </html>
