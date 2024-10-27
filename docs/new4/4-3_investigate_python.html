@@ -91,7 +91,7 @@
 	</div>
 	
 </div>
-<div id="correctMessage" class="correct-message">Correct!</div>
+<div id="correctMessage" class="correct-message">Korrekt, Glückwunsh!</div>
 </body>
 
 
@@ -197,8 +197,7 @@
 		console.log('Change! Better save:', event)
 	});
 
-	editor.setCode('hp=100\ndamage=1\nwhile hp>0:\n    print("hp before the loop:",hp)\n    print("damage before the loop:",damage)\n    hp-=damage\n    damage*=2\n    print("hp after the loop", hp)\n    print("damage after the loop: ",damage)\n    print("Hit!")\n');
-
+	editor.setCode('for celsius in range(-10, 11):\n\tfahrenheit = celsius * 1.8 + 32\n\tprint(celsius)\n\tprint(fahrenheit)')
 
 	Sk.configure({
 		__future__: Sk.python3,
@@ -276,8 +275,7 @@
 	document.getElementById('submit').addEventListener('click', function() {
 		let check = true;
 		const container = document.querySelector('.js-container');
-		const choice1 = "('hp before the loop:', 100)('damage before the loop:', 1)('hp after the loop', 99)('damage after the loop: ', 2)Hit!('hp before the loop:', 99)('damage before the loop:', 2)('hp after the loop', 97)('damage after the loop: ', 4)Hit!('hp before the loop:', 97)('damage before the loop:', 4)('hp after the loop', 93)('damage after the loop: ', 8)Hit!('hp before the loop:', 93)('damage before the loop:', 8)('hp after the loop', 85)('damage after the loop: ', 16)Hit!('hp before the loop:', 85)('damage before the loop:', 16)('hp after the loop', 69)('damage after the loop: ', 32)Hit!('hp before the loop:', 69)('damage before the loop:', 32)('hp after the loop', 37)('damage after the loop: ', 64)Hit!('hp before the loop:', 37)('damage before the loop:', 64)('hp after the loop', -27)('damage after the loop: ', 128)Hit!";
-
+		const choice1 = "-10-9-8-7-6-5-4-3-2-1012345678910";
 		// const choice4 = "D";
 
 		checkCode("");
