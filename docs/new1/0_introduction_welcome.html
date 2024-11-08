@@ -71,7 +71,7 @@
     </div>
     
 </div>
-<div id="correctMessage" class="correct-message">Richtig. Glückwunsch!</div>
+<div id="correctMessage" class="correct-message">Willkommen!</div>
 <script>
 	window.onload = () => {
 		let parentDiv = document.getElementById("blockmirror-editor");
@@ -273,10 +273,10 @@
     const container = document.querySelector('.js-container');
     runCode();
     var a = $("#output").text();
-    if(a=="Hallo Welt"){
-        new Confettiful(container);
-        showCorrectMessage();
-    }
+
+    new Confettiful(container);
+    showCorrectMessage();
+
   });
 
   function showCorrectMessage() {
