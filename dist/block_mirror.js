@@ -5,7 +5,7 @@
  * @param {!Blockly.Workspace} workspace Workspace to generate code from.
  */
 Blockly.Python.init = function (workspace) {
-  /**
+  /**f
    * Empty loops or conditionals are not allowed in Python.
    */
   Blockly.Python.PASS = this.INDENT + 'pass\n'; // Create a dictionary of definitions to be printed before the code.
@@ -730,23 +730,23 @@ BlockMirrorTextEditor.prototype.VIEW_CONFIGURATIONS = {
 };
 
 BlockMirrorTextEditor.prototype.resizeResponsively = function () {
-  var mode = this.blockMirror.mode_;
-  var configuration = this.VIEW_CONFIGURATIONS[mode];
-  var width = configuration.width;
-  var height = this.blockMirror.configuration.height;
+  // var mode = this.blockMirror.mode_;
+  // var configuration = this.VIEW_CONFIGURATIONS[mode];
+  // var width = configuration.width;
+  // var height = this.blockMirror.configuration.height;
 
-  if (mode === 'split') {
-    if (window.innerWidth >= this.blockMirror.BREAK_WIDTH) {
-      this.textContainer.style.width = width;
-      this.textContainer.style.height = height + "px";
-    } else {
-      this.textContainer.style.width = '100%';
-      this.textContainer.style.height = height / 2 + "px";
-    }
-  } else {
-    this.textContainer.style.width = width;
-    this.textContainer.style.height = height + "px";
-  }
+  // if (mode === 'split') {
+  //   if (window.innerWidth >= this.blockMirror.BREAK_WIDTH) {
+  //     this.textContainer.style.width = width;
+  //     this.textContainer.style.height = height + "px";
+  //   } else {
+  //     this.textContainer.style.width = '100%';
+  //     this.textContainer.style.height = height / 2 + "px";
+  //   }
+  // } else {
+  //   this.textContainer.style.width = width;
+  //   this.textContainer.style.height = height + "px";
+  // }
 };
 
 BlockMirrorTextEditor.prototype.setMode = function (mode) {
@@ -2593,84 +2593,84 @@ BlockMirrorTextToBlocks.prototype.MODULE_FUNCTION_SIGNATURES = {
   },
   "turtle": {},
   'plt': {
-    'show': {
-      returns: false,
-      simple: [],
-      message: 'show plot canvas',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'hist': {
-      returns: false,
-      simple: ['values'],
-      message: 'plot histogram',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'bar': {
-      returns: false,
-      simple: ['xs', 'heights', '*tick_label'],
-      message: 'plot bar chart',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'plot': {
-      returns: false,
-      simple: ['values'],
-      message: 'plot line',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'boxplot': {
-      returns: false,
-      simple: ['values'],
-      message: 'plot boxplot',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'hlines': {
-      returns: false,
-      simple: ['y', 'xmin', 'xmax'],
-      message: 'plot horizontal line',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'vlines': {
-      returns: false,
-      simple: ['x', 'ymin', 'ymax'],
-      message: 'plot vertical line',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'scatter': {
-      returns: false,
-      simple: ['xs', 'ys'],
-      message: 'plot scatter',
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'title': {
-      returns: false,
-      simple: ['label'],
-      message: "make plot's title",
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'xlabel': {
-      returns: false,
-      simple: ['label'],
-      message: "make plot's x-axis label",
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'ylabel': {
-      returns: false,
-      simple: ['label'],
-      message: "make plot's y-axis label",
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'xticks': {
-      returns: false,
-      simple: ['xs', 'labels', '*rotation'],
-      message: "make x ticks",
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    },
-    'yticks': {
-      returns: false,
-      simple: ['ys', 'labels', '*rotation'],
-      message: "make y ticks",
-      colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
-    }
+  //   'show': {
+  //     returns: false,
+  //     simple: [],
+  //     message: 'show plot canvas',
+  //     colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+  //   },
+    // 'hist': {
+    //   returns: false,
+    //   simple: ['values'],
+    //   message: 'plot histogram',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'bar': {
+    //   returns: false,
+    //   simple: ['xs', 'heights', '*tick_label'],
+    //   message: 'plot bar chart',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'plot': {
+    //   returns: false,
+    //   simple: ['values'],
+    //   message: 'plot line',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'boxplot': {
+    //   returns: false,
+    //   simple: ['values'],
+    //   message: 'plot boxplot',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'hlines': {
+    //   returns: false,
+    //   simple: ['y', 'xmin', 'xmax'],
+    //   message: 'plot horizontal line',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'vlines': {
+    //   returns: false,
+    //   simple: ['x', 'ymin', 'ymax'],
+    //   message: 'plot vertical line',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'scatter': {
+    //   returns: false,
+    //   simple: ['xs', 'ys'],
+    //   message: 'plot scatter',
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'title': {
+    //   returns: false,
+    //   simple: ['label'],
+    //   message: "make plot's title",
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'xlabel': {
+    //   returns: false,
+    //   simple: ['label'],
+    //   message: "make plot's x-axis label",
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'ylabel': {
+    //   returns: false,
+    //   simple: ['label'],
+    //   message: "make plot's y-axis label",
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'xticks': {
+    //   returns: false,
+    //   simple: ['xs', 'labels', '*rotation'],
+    //   message: "make x ticks",
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // },
+    // 'yticks': {
+    //   returns: false,
+    //   simple: ['ys', 'labels', '*rotation'],
+    //   message: "make y ticks",
+    //   colour: BlockMirrorTextToBlocks.COLOR.PLOTTING
+    // }
   }
 };
 BlockMirrorTextToBlocks.prototype.FUNCTION_SIGNATURES['assert_equal'] = BlockMirrorTextToBlocks.prototype.MODULE_FUNCTION_SIGNATURES['cisc108']['assert_equal'];
@@ -2792,12 +2792,14 @@ TOOLBOX_CATEGORY.DECISIONS = {
 TOOLBOX_CATEGORY.CALCULATIONS = {
   name: "Calculation",
   colour: "MATH",
-  blocks: ["___ + ___", "round(___)"]
+  // blocks: ["___ + ___", "round(___)"]
+  blocks: ["___ + ___"]
 };
 TOOLBOX_CATEGORY.OUTPUT_WITH_PLOTTING = {
   name: "Output",
   colour: "PLOTTING",
-  blocks: ["print(___)", "plt.plot(___)", "plt.scatter(___, ___)", "plt.hist(___)", "plt.bar(___, ___, tick_label=___)", "plt.boxplot(___)", "plt.show()", "plt.title(___)", "plt.xlabel(___)", "plt.ylabel(___)", "plt.hlines(___, ___, ___)", "plt.vlines(___, ___, ___)"]
+  // blocks: ["print(___)", "plt.plot(___)", "plt.scatter(___, ___)", "plt.hist(___)", "plt.bar(___, ___, tick_label=___)", "plt.boxplot(___)", "plt.show()", "plt.title(___)", "plt.xlabel(___)", "plt.ylabel(___)", "plt.hlines(___, ___, ___)", "plt.vlines(___, ___, ___)"]
+  blocks:["print(___)"]
 };
 TOOLBOX_CATEGORY.TURTLES = {
   name: "Turtles",
@@ -2813,6 +2815,7 @@ TOOLBOX_CATEGORY.VALUES = {
   name: "Values",
   colour: "TEXT",
   blocks: ['""', "0", "True"]
+  // blocks:['""']
 };
 TOOLBOX_CATEGORY.SEP = "<sep></sep>";
 TOOLBOX_CATEGORY.CONVERSIONS = {
