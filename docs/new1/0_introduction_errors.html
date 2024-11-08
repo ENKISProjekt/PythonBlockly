@@ -59,32 +59,42 @@
     <div style="width:80%; height:300px;margin:0 auto; left:10px; position:absolute"
          id='example-frame'>
     
-        <!-- <div class="btn-group" data-toggle="buttons" data-bind="visible: !assignment.upload()">
-            <label onclick="editor.setMode('block');">
-                <input type="radio" name="blockpy-mode-set" autocomplete="off"> Blocks
-            </label>
-            <label onclick="editor.setMode('split');">
-                <input type="radio" name="blockpy-mode-set" autocomplete="off" checked> Split
-            </label>
-            <label onclick="editor.setMode('text');">
-                <input type="radio" name="blockpy-mode-set" autocomplete="off"> Text
-            </label>
-        </div> -->
-
-    
     
         <div id="blockmirror-editor"></div>
     </div>
 
     <div class="output" style="position:absolute; height:300px;left:81%;padding: 20px; box-sizing: border-box; flex: 1; overflow: auto; background-color: #ffffff;">
-        <button id='mygo'>RUN</button>
-        <!-- <button id='submit'>SUBMIT</button> -->
+        <!-- <button id='mygo'>RUN</button> -->
+        <button id='submit'>SUBMIT</button>
         <h2>Output</h2>
         <pre id="output" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
     </div>
     
 </div>
 <div id="correctMessage" class="correct-message">Richtig. Glückwunsch!</div>
+<script>
+	window.onload = () => {
+		let parentDiv = document.getElementById("blockmirror-editor");
+		let childDivs = parentDiv.children;
+
+		
+		childDivs[0].style.height = "50%";
+		childDivs[0].style.display= "block";
+		childDivs[0].style.width = "100%";
+
+		childDivs[1].style.height = "50%";
+		childDivs[1].style.display= "block";
+		childDivs[1].style.width = "90%";
+
+		childDivs[2].style.height = "50%";
+		childDivs[2].style.display= "block";
+		childDivs[2].style.width = "60%";
+
+		childDivs[1].children[0].children[0].style.width="100%";
+		
+		const div = childDivs[1];
+	};
+</script>
 </body>
 
 
@@ -184,7 +194,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode('print("vor dem Fehler")\npriint("Hallo Welt") # Fehler, weil priint statt print\nprint("nach dem Fehler")')
+    editor.setCode('print("vor dem Fehler(wird ausgegeben)")\npriint("Fehler, weil priint statt print(wird nicht ausgegeben)")\nprint("nach dem Fehler(wird nicht ausgegeben)")')
 
 
     Sk.configure({
