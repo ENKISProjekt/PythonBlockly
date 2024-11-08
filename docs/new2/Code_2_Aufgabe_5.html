@@ -114,7 +114,7 @@
 
     // Iterate through each 'CodeMirror-line' element and append its inner text to the combinedText
     codeLines.forEach(line => {
-        combinedText += line.innerText + '\n';
+        combinedText += convertNumberToFloatFormat(line.innerText) + '\n';
     });
 
     runCode();
@@ -132,7 +132,7 @@
             if(line.innerText!='\u200B'){
                 console.log(line);
                 console.log(line.innerText);
-                combinedText += line.innerText + '\n';
+                combinedText += convertNumberToFloatFormat(line.innerText) + '\n';
             }
         });
 
@@ -310,5 +310,20 @@ document.querySelectorAll('span.blocklyTreeLabel').forEach(function(span) {
 <!-- Remark: Only enable block mode -->
 <script>
     editor.setMode('split');
+</script>
+<script>
+    function convertNumberToFloatFormat(str) {
+        // Use a regular expression to match the pattern '/ <spaces> <string_or_number>'
+        return str.replace(/\/\s*([^\s]+)/g, (match, p1) => {
+            // Convert both numbers and strings to 'float(<string>)' format
+            return '/ float(' + p1 + ')';
+        });
+    }
+
+    // Example usage:
+    let inputString = "This is a test /   12345 and more text / 67.89";
+    let outputString = convertNumberToFloatFormat(inputString);
+    console.log(outputString);
+
 </script>
 </html>
