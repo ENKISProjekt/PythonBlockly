@@ -194,7 +194,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode("vogelbestandsdichte = 200  # Adjust the value as needed\nif vogelbestandsdichte > 1000:\n\tprint('Sehr niedrige Prioritaet')\nif vogelbestandsdichte > 300:\n\tprint('Niedrige Prioritaet')\nif vogelbestandsdichte > 100:\n\tprint('Mittlere Prioritaet')\nif vogelbestandsdichte > 10:\n\tprint('Hohe Prioritaet')\nelse:\n\tprint('Kritisch - Notfallprioritaet')");
+    editor.setCode("vogelbestandsdichte = 200 \nif vogelbestandsdichte > 1000:\n\tprint('Sehr niedrige Prioritaet')\nif vogelbestandsdichte > 300:\n\tprint('Niedrige Prioritaet')\nif vogelbestandsdichte > 100:\n\tprint('Mittlere Prioritaet')\nif vogelbestandsdichte > 10:\n\tprint('Hohe Prioritaet')\nelse:\n\tprint('Kritisch - Notfallprioritaet')");
     // editor.setCode('print("Die Frage ist nicht, ob Maschinen denken, sondern ob Menschen es tun.")\n')
 
     Sk.configure({
@@ -309,7 +309,7 @@ document.querySelectorAll('span.blocklyTreeLabel').forEach(function(span) {
 
 <!-- Remark: Only enable block mode -->
 <script>
-    editor.setMode('text');
+    editor.setMode('split');
 </script>
 <script>
     function convertNumberToFloatFormat(str) {
