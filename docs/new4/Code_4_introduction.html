@@ -194,7 +194,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode('# Definiere Anfangsbetrag, Zinssatz und Anzahl der Jahre\nkapital = 10000    # Anfangsbetrag in Euro\nzins = 0.05       # 5% Zinssatz\njahre = 10        # Laufzeit in Jahren\n\nprint("The initial investiment is: " + str(kapital))\n\n# Berechne einfache Zinsen über die Zeit\nfor jahr in range(1, jahre + 1):\n\t# Formel für einfache Zinsen ist kapital * (1 + zins * jahr)\n\teinfacher_zins_betrag = kapital * (1 + zins * jahr)\n\tformatierte_nachricht = "Nach Jahr " + str(jahr) + " ist die Investition wert: " + str(einfacher_zins_betrag)\n\tprint(formatierte_nachricht)\n\n# Ausgabe: Zeigt das Guthaben am Ende jedes Jahres an');
+    editor.setCode('# Definiere Anfangsbetrag, Zinssatz und Anzahl der Jahre\nkapital = 10000    # Anfangsbetrag in Euro\nzins = 0.05       # 5% Zinssatz\njahre = 10        # Laufzeit in Jahren\n\nprint("Die anfaengliche Investition betraegt: " + str(kapital))\n\n# Berechne einfache Zinsen über die Zeit\nfor jahr in range(1, jahre + 1):\n\t# Formel für einfache Zinsen ist kapital * (1 + zins * jahr)\n\teinfacher_zins_betrag = kapital * (1 + zins * jahr)\n\tformatierte_nachricht = "Nach Jahr " + str(jahr) + " ist die Investition wert: " + str(einfacher_zins_betrag)\n\tprint(formatierte_nachricht)\n\n# Ausgabe: Zeigt das Guthaben am Ende jedes Jahres an');
     // editor.setCode('print("Die Frage ist nicht, ob Maschinen denken, sondern ob Menschen es tun.")\n')
 
     Sk.configure({
@@ -273,7 +273,7 @@
     const container = document.querySelector('.js-container');
     runCode();
     var a = $("#output").text();
-    if(a=="The initial investiment is: 10000Nach Jahr 1 ist die Investition wert: 10500.0Nach Jahr 2 ist die Investition wert: 11000.0Nach Jahr 3 ist die Investition wert: 11500.0Nach Jahr 4 ist die Investition wert: 12000.0Nach Jahr 5 ist die Investition wert: 12500.0Nach Jahr 6 ist die Investition wert: 13000.0Nach Jahr 7 ist die Investition wert: 13500.0Nach Jahr 8 ist die Investition wert: 14000.0Nach Jahr 9 ist die Investition wert: 14500.0Nach Jahr 10 ist die Investition wert: 15000.0"){
+    if(a=="Die anfaengliche Investition betraegt: 10000Nach Jahr 1 ist die Investition wert: 10500.0Nach Jahr 2 ist die Investition wert: 11000.0Nach Jahr 3 ist die Investition wert: 11500.0Nach Jahr 4 ist die Investition wert: 12000.0Nach Jahr 5 ist die Investition wert: 12500.0Nach Jahr 6 ist die Investition wert: 13000.0Nach Jahr 7 ist die Investition wert: 13500.0Nach Jahr 8 ist die Investition wert: 14000.0Nach Jahr 9 ist die Investition wert: 14500.0Nach Jahr 10 ist die Investition wert: 15000.0"){
         new Confettiful(container);
         showCorrectMessage();
     }
