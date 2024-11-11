@@ -194,7 +194,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode('# Definiere eine Funktion, die den Durchschnitt von zwei Magnituden berechnet\ndef durchschnitt_magnitude(magnitude1, magnitude2):\n\treturn (magnitude1 + magnitude2) / 2  # Addiere die Magnituden und teile durch 2\n\n# Beispiel-Magnituden von zwei Erdbeben\nmagnitude1 = 4.5\nmagnitude2 = 3.8\n\n# Verwende die Funktion, um den Durchschnitt zu berechnen\ndurchschnitt = durchschnitt_magnitude(magnitude1, magnitude2)\nprint("Die durchschnittliche Magnitude der beiden Erdbeben ist:", durchschnitt)');
+    editor.setCode('# Definiere eine Funktion, die den Durchschnitt von zwei Magnituden berechnet\ndef durchschnitt_magnitude(magnitude1, magnitude2):\n\treturn (magnitude1 + magnitude2) / 2  # Addiere die Magnituden und teile durch 2\n\n# Beispiel-Magnituden von zwei Erdbeben\nmagnitude1 = 4.5\nmagnitude2 = 3.8\n\n# Verwende die Funktion, um den Durchschnitt zu berechnen\ndurchschnitt = durchschnitt_magnitude(magnitude1, magnitude2)\nprint("Die durchschnittliche Magnitude der beiden Erdbeben ist:"+ str(durchschnitt))');
     // editor.setCode('print("Die Frage ist nicht, ob Maschinen denken, sondern ob Menschen es tun.")\n')
 
     Sk.configure({
@@ -273,7 +273,7 @@
     const container = document.querySelector('.js-container');
     runCode();
     var a = $("#output").text();
-    if(a=="('Die durchschnittliche Magnitude der beiden Erdbeben ist:', 4.15)"){
+    if(a=="Die durchschnittliche Magnitude der beiden Erdbeben ist:4.15"){
         new Confettiful(container);
         showCorrectMessage();
     }
