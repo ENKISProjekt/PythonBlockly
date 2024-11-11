@@ -194,7 +194,7 @@
         console.log('Change! Better save:', event)
     });
 
-    editor.setCode("# Implementieren Sie das Programm entweder mit Blockly im oberen Raum oder mit Python hier. \n # Wenn Sie auf 'Submit' clicken, um Ihr Program zu ueberpruefen, bitte die Variablen vogelbestandsdichte und raeuberbestandsdichte nicht definieren.");
+    editor.setCode('# Bestimmen, ob Naturschutzmassnahmen erforderlich sind\nif vogelbestandsdichte == "kritisch":\n\tprint("Naturschutzmassnahme erforderlich")\nelif vogelbestandsdichte == "hoch":\n\tprint("Naturschutzmassnahme nicht erforderlich")\nelif vogelbestandsdichte == "mittel":\n\tprint("")\nelif vogelbestandsdichte == "niedrig":\n\tprint("")\nelse:\n\tprint("")');
     // editor.setCode('print("Die Frage ist nicht, ob Maschinen denken, sondern ob Menschen es tun.")\n')
 
     Sk.configure({
