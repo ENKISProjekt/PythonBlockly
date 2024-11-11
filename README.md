@@ -3,6 +3,31 @@ An interface for dual block/text representation with Blockly
 
 [Try it out!](https://blockpy-edu.github.io/BlockMirror/docs/index.html)
 
+# Notes from Hans
+
+In case I am unavailabe for some reason (I won't, but as an insurance)
+
+The Blockly-Python interface files are in /docs/ and new1, new2, ... and so on.
+
+The following instructions should cover most of the possible changes.
+
+
+## Change Initial Placeholder
+Ctrl+F for .setCode
+This can set the placeholder code. Write this in Python, including \n and \t, and Blockly will be automatically shown.
+
+## Change Pass Condition
+Ctrl+F for 'a==' or 'flag'
+This can set the 'pass' conditions. If the printed out results are the same, then it will give you a pass.
+
+if there is 'flag' variable defined, then it will test the code with multiple inputs.
+runCode(????) ???? defines the first lines to be added to the student's submission. Then the output can be checked. 'flag' is turned to false if any of the input gives a wrong output.
+
+## Change which Blocks are availabe to students
+Ctrl+F for "Decisions" then you see two arrays. Change the second one, the ones to keep, write the ones that you wish to keep. Take a look at the first array to see which ones you can add to the interface.
+
+
+
 # Basic Setup
 
 Check out `test/simple.html` for an example of how to use BlockMirror.
